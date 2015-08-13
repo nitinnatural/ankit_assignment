@@ -23,14 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        View v = getLayoutInflater().inflate(R.layout.odd_item, null);
-//
-//        ViewGroup.LayoutParams lParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//
-//        TextView newView = new TextView(this);
-//        newView.setText("heelloo this is new text");
-//        newView.setLayoutParams(lParams);
-//        v.setLayoutParams(lParams);
 
         mIndex = 0;
         linearLayout = (LinearLayout) findViewById(R.id.llList);
@@ -47,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*
+    * This method accept layoutId(R.layout) and create a new view inside the liner layout
+    * */
     public void createCustomView(int id){
         ViewGroup.LayoutParams lParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
         View v = getLayoutInflater().inflate(id, null);
@@ -61,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+    * this method will check the index for odd/even and retun the
+    * layout id depending upon odd or even
+    * */
     public int isEven(int index){
         if((index%2) == 0){
             return R.layout.even_item;
